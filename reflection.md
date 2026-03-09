@@ -36,15 +36,15 @@ Yeah, Claude helped a lot with the tests. I told it the hint bug I found and it 
 
 ## 4. What did you learn about Streamlit and state?
 
-- In your own words, explain why the secret number kept changing in the original app.
-- How would you explain Streamlit "reruns" and session state to a friend who has never used Streamlit?
-- What change did you make that finally gave the game a stable secret number?
+- In your own words, explain why the secret number kept changing in the original app. Everytime you click a buttonm the whole script runs.And since the original code used random at the very top without anything to stop the code from getting it to refresh everytime a button is clicked.
+- How would you explain Streamlit "reruns" and session state to a friend who has never used Streamlit? It is a webpage that reloads from scratch everytime you click it and forgets everything.
+- What change did you make that finally gave the game a stable secret number? With the AI suggestion, I wrapped the secret in a check. Which was if "secret" not in st.session_state.
 
 ---
 
 ## 5. Looking ahead: your developer habits
 
-- What is one habit or strategy from this project that you want to reuse in future labs or projects?
-  - This could be a testing habit, a prompting strategy, or a way you used Git.
-- What is one thing you would do differently next time you work with AI on a coding task?
-- In one or two sentences, describe how this project changed the way you think about AI generated code.
+- What is one habit or strategy from this project that you want to reuse in future labs or projects? Test out locally more and see the confrimation before moving further
+  - This could be a testing habit, a prompting strategy, or a way you used Git. I like all those and I could alot more of them in the future.
+- What is one thing you would do differently next time you work with AI on a coding task? spend more time planning
+- In one or two sentences, describe how this project changed the way you think about AI generated code. to be more skeptical

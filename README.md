@@ -25,13 +25,29 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 📝 Document Your Experience
 
-- [ ] Describe the game's purpose.
-- [ ] Detail which bugs you found.
-- [ ] Explain what fixes you applied.
+**Game purpose:** A number guessing game where the player tries to guess a secret number within a limited number of attempts, with hints pointing them higher or lower each turn.
+
+**Bugs found:**
+- Hints were backwards — "Go HIGHER!" showed when the guess was too high, and "Go LOWER!" when too low
+- The New Game button didn't reset status, history, score, or use the correct difficulty range
+- `st.rerun()` caused an AttributeError in this version of Streamlit
+- Logic functions were defined inline in `app.py` instead of `logic_utils.py`, making them untestable without importing Streamlit
+
+**Fixes applied:**
+- Swapped the "Go HIGHER!" / "Go LOWER!" messages in `check_guess` so hints are correct
+- Fixed the New Game block to fully reset `status`, `history`, `score`, `attempts`, and use `random.randint(low, high)` based on difficulty
+- Replaced `st.rerun()` with `st.experimental_rerun()`
+- Moved all logic functions into `logic_utils.py` and updated `app.py` to import from there
 
 ## 📸 Demo
 
-- [ ] [Insert a screenshot of your fixed, winning game here]
+![Winning the fixed game](screenshots/win.png)
+
+## ✅ Challenge 1: Advanced Edge-Case Testing
+
+pytest results showing all 9 tests passing:
+
+![pytest results](screenshots/pytest.png)
 
 ## 🚀 Stretch Features
 
